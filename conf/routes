@@ -1,0 +1,10 @@
+GET           /                        controllers.Application.main(any = "none")
+
+GET           /views/*any              controllers.Application.loadPublicHTML(any)
+
+GET           /api/patients            controllers.Patients.all
+POST          /api/patients/new        controllers.Patients.create
+DELETE        /api/patients/:id        controllers.Patients.delete(id: String)
+
+GET           /assets/*file            controllers.Assets.at(path = "/public", file)
+GET           /*any                    controllers.Application.main(any)
